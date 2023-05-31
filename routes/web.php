@@ -24,26 +24,27 @@ Route::get('/', function () {
 Auth::routes(["register"=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 // Admin Dashboard ------
 Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
     Route::get("/" , [AdminController::class, 'admin'])->name("admin");
 
-// Banner Section 
+    // Banner Section 
     Route::resource("/banner" , App\Http\Controllers\BannerController::class);
     Route::post("banner_status" , [App\Http\Controllers\BannerController::class , "bannerStatus"])->name("banner.status");
  
-// Category Section 
+    // Category Section 
     Route::resource("/category" , App\Http\Controllers\CategoryController::class);
     Route::post("category_status" , [App\Http\Controllers\CategoryController::class , "categoryStatus"])->name("category.status");
 
     Route::post('category/{id}/child' ,[App\Http\Controllers\CategoryController::class , "getChildByParentId"]);
 
 
-// Brand Section 
+    // Brand Section 
     Route::resource("/brand" , App\Http\Controllers\BrandController::class);
     Route::post("brand_status" , [App\Http\Controllers\BrandController::class , "brandStatus"])->name("brand.status");
 
-// Product Section 
+    // Product Section 
     Route::resource("/product" , App\Http\Controllers\ProductController::class);
     Route::post("product_status" , [App\Http\Controllers\ProductController::class , "productStatus"])->name("product.status");
 
