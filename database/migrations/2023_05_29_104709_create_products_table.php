@@ -26,7 +26,7 @@ return new class extends Migration
             $table->float("offre_price")->default(0);
             $table->float("discount")->default(0);
             $table->string("size");
-            $table->enum("conditions" , ["new" , "popular" , "winter"])->default("new");
+            $table->enum("conditions" , ["NEW" , "POPULAR" , "WINTER"])->default("NEW");
             $table->unsignedBigInteger('vendor_id')->nullable();
             $table->enum("status" , ["active" , "inactive"])->default('active');
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete("cascade");
