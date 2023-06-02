@@ -33,7 +33,7 @@
         <div class="card">
           <div class="body">
 
-            <form action="{{route('banner.store')}}" method="post">
+            <form action="{{route('product.store')}}" method="post">
             @csrf
             <div class="row clearfix">
 
@@ -99,7 +99,7 @@
             
               <div class="col-lg-12 col-md-6 col-sm-12">
                 <label for="">Brands</label>
-                <select name="condition" class="form-control show-tick">
+                <select name="brand_id" class="form-control show-tick">
                   <option value="">-- Brands --</option>
                   @foreach(\App\Models\Brand::get() as $brand)
                   <option value="{{$brand->id}}">{{$brand->title}}</option>
@@ -109,7 +109,7 @@
 
               <div class="col-lg-12 col-md-6 col-sm-12">
                 <label for="">Category</label>
-                <select id="cat_id" name="condition" class="form-control show-tick">
+                <select id="cat_id" name="cat_id" class="form-control show-tick">
                   <option value="">-- Category --</option>
                   @foreach(\App\Models\Category::where('is_parent' ,1)->get() as $cat)
                   <option value="{{$cat->id}}">{{$cat->title}}</option>
@@ -119,7 +119,7 @@
 
               <div class="col-lg-12 col-md-6 col-sm-12 d-none" id="child_cat_div">
                 <label for="">Child Category</label>
-                <select id="chat_cat_id" class="form-control show-tick">
+                <select id="chil_cat_id" name="chil_cat_id" class="form-control show-tick">
                   <option value="">-- Child Category --</option>
                 </select>
               </div>
@@ -139,15 +139,15 @@
                 <label for="">Condition</label>
                 <select name="conditions" class="form-control show-tick">
                   <option value="">-- Conditions --</option>
-                  <option value="new" {{old('conditions') == 'new' ? 'selected' : ''}}>New</option>
-                  <option value="popular" {{old('conditions') == 'popular' ? 'selected' : ''}}>Popular</option>
-                  <option value="winter" {{old('conditions') == 'winter' ? 'selected' : ''}}>winter</option>
+                  <option value="NEW" {{old('conditions') == 'NEW' ? 'selected' : ''}}>New</option>
+                  <option value="POPULAR" {{old('conditions') == 'POPULAR' ? 'selected' : ''}}>Popular</option>
+                  <option value="WINTER" {{old('conditions') == 'WINTER' ? 'selected' : ''}}>winter</option>
                 </select>
               </div>
 
               <div class="col-lg-12 col-md-6 col-sm-12">
                 <label for="">Vendors</label>
-                <select name="conditions" class="form-control show-tick">
+                <select name="vendor_id" class="form-control show-tick">
                   <option value="">-- Vendors --</option>
                   @foreach(\App\Models\User::where('role' , "vendor")->get() as $vendor)
                   <option value="{{$vendor->id}}">{{$vendor->full_name}}</option>
@@ -213,7 +213,17 @@
           cat_id : cat_id,
         },
         success : function(response){
-          console.log(response);
+          var html_option =  "<option value=''>-- Child Category --</option>";
+          if(response.status)
+          {
+            $("#child_cat_div").removeClass("d-none");
+            $.each(response.data, function(id,title){
+              html_option += `<option value='${id}'>${title}</option>` 
+            })
+          }else{
+            $("#child_cat_div").addClass("d-none");
+          }
+          $("#chil_cat_id").html(html_option);
         }
       })
     }
