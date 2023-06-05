@@ -50,12 +50,14 @@
                                 <tbody>
 
                                     @foreach($products as $item)
-
+                                    @php 
+                                        $photo = explode(',', $item->photo);
+                                    @endphp 
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$item->title}}</td>
                                         <!-- <td>{!! html_entity_decode($item->description) !!}</td> -->
-                                        <td><img src="{{$item->photo}}" alt="banner image" style="max-height:80px;max-width:110px"></td>
+                                        <td><img src="{{$photo[0]}}" alt="banner image" style="max-height:80px;max-width:110px"></td>
 
                                         <td>${{number_format($item->price,2)}}</td>
                                         <td>{{$item->discount}} %</td>
@@ -106,15 +108,19 @@
 
 
                                                         <div class="row">
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-4">
                                                                 <strong>Price : </strong>
                                                                 <p>$ {{number_format($product->price,2)}}</p>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-4">
                                                                 <strong>Offre Price : </strong>
                                                                 <p>$ {{number_format($product->offre_price,2)}}</p>
                                                             </div>
-                                                        </div>
+                                                            <div class="col-md-4">
+                                                                <strong>Stock : </strong>
+                                                                <p>{{$product->stock}}</p>
+                                                            </div>
+                                                        </div> 
 
                                                         <div class="row">
                                                             <div class="col-md-6">
@@ -127,15 +133,18 @@
                                                             </div>
                                                         </div>
 
-
                                                         <div class="row">
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-4">
                                                             <strong>Brand : </strong>
                                                             <p>{{\App\Models\Brand::where("id",$product->brand_id)->value("title") }}</p>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-4">
                                                                 <strong>Size : </strong>
                                                                 <p class="badge badge-success">{{$product->size}}</p>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <strong>Vendor : </strong>
+                                                                <p>{{\App\Models\User::where('id' , $product->vendor_id)->value("full_name")}}</p>
                                                             </div>
                                                         </div>
 
@@ -149,12 +158,7 @@
                                                                 <p class="badge badge-warning">{{$product->status}}</p>
                                                             </div>
                                                         </div>
-
-
-
                                                         
-
-
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
