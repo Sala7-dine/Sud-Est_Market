@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Fronten ---- 
+
+Route::get("/" , [App\Http\Controllers\Frontend\IndexController::class , "home"])->name("home"); 
+
+
+// End Frontend ------ 
 
 Auth::routes(["register"=>false]);
 
