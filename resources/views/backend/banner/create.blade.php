@@ -44,6 +44,12 @@
               </div>
               <div class="col-lg-12 col-md-12">
                 <div class="form-group">
+                  <label for="">URL <span class="text-danger"> *</span></label>
+                  <input type="text" class="form-control" name="slug" value="{{old('slug')}}" placeholder="url">
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12">
+                <div class="form-group">
                   <label for="">Photo</label>
                   <div class="input-group">
                     <span class="input-group-btn">

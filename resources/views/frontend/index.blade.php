@@ -27,41 +27,28 @@
     </section>
     <!-- Welcome Slides Area -->
     @endif
+
+
+@if(count($categories))
     <!-- Top Catagory Area -->
     <div class="top_catagory_area mt-50 clearfix">
         <div class="container">
             <div class="row">
+            @foreach($categories as $cat)
                 <!-- Single Catagory -->
                 <div class="col-12 col-md-4">
-                    <div class="single_catagory_area mt-50">
-                        <a href="#">
-                            <img src="frontend/img/bg-img/c1.jpg" alt="">
+                    <div class="single_catagory_area mt-50"></div>
+                      <a href="{{route('product.category', $cat->slug)}}">
+                            <img src="{{$cat->photo}}" alt="{{$cat->title}}">
                         </a>
                     </div>
                 </div>
-
-                <!-- Single Catagory -->
-                <div class="col-12 col-md-4">
-                    <div class="single_catagory_area mt-50">
-                        <a href="#">
-                            <img src="frontend/img/bg-img/c2.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="col-12 col-md-4">
-                    <div class="single_catagory_area mt-50">
-                        <a href="#">
-                            <img src="frontend/img/bg-img/c3.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </div>
     <!-- Top Catagory Area -->
-
+@endif
     <!-- Quick View Modal Area -->
     <div class="modal fade" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -138,6 +125,12 @@
     </div>
     <!-- Quick View Modal Area -->
 
+
+    @php 
+    $new_product = \App\Models\Product::where(["status"=>"active" ,"conditions"=>"NEW"])->orderBy("id" , "DESC")->limit(10)->get();
+    @endphp
+
+    @if(count($new_product)>0)
     <!-- New Arrivals Area -->
     <section class="new_arrivals_area section_padding_100 clearfix">
         <div class="container">
@@ -153,57 +146,21 @@
                 <div class="col-12">
                     <div class="new_arrivals_slides owl-carousel">
                         <!-- Single Product -->
-                        <div class="single-product-area">
-                            <div class="product_image">
-                                <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-1-back.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-1.png" alt="">
 
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span>New</span>
-                                </div>
-
-                                <!-- Wishlist -->
-                                <div class="product_wishlist">
-                                    <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                                </div>
-
-                                <!-- Compare -->
-                                <div class="product_compare">
-                                    <a href="compare.html"><i class="icofont-exchange"></i></a>
-                                </div>
-                            </div>
-
-                            <!-- Product Description -->
-                            <div class="product_description">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart">
-                                    <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
-                                </div>
-
-                                <!-- Quick View -->
-                                <div class="product_quick_view">
-                                    <a href="#" data-toggle="modal" data-target="#quickview"><i
-                                            class="icofont-eye-alt"></i> Quick View</a>
-                                </div>
-
-                                <p class="brand_name">Top</p>
-                                <a href="#">Boutique Silk Dress</a>
-                                <h6 class="product-price">$48.99</h6>
-                            </div>
-                        </div>
-
+                        @foreach($new_product as $nproduct)
                         <!-- Single Product -->
                         <div class="single-product-area">
                             <div class="product_image">
+
+                            @php 
+                            $photo = explode(",",$nproduct->photo);
+                            @endphp
                                 <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-6.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-6-back.png" alt="">
+                                <img class="normal_img" src="{{$photo[0]}}" alt="{{$nproduct->title}}">
 
                                 <!-- Product Badge -->
                                 <div class="product_badge">
-                                    <span>New</span>
+                                    <span>{{$nproduct->conditions}}</span>
                                 </div>
 
                                 <!-- Wishlist -->
@@ -230,143 +187,20 @@
                                             class="icofont-eye-alt"></i> Quick View</a>
                                 </div>
 
-                                <p class="brand_name">Lim</p>
-                                <a href="#">Gracia Plaid Dress</a>
-                                <h6 class="product-price">$17.63</h6>
+                                <p class="brand_name">{{\App\Models\Brand::where('id' , $nproduct->brand_id)->value("title")}}</p>
+                                <a href="{{route('product.detail' , $nproduct->slug)}}">{{ucfirst($nproduct->title)}}</a>
+                                <h6 class="product-price">{{ number_format($nproduct->offre_price , 2) }} <small> <del class="text-danger">{{ number_format($nproduct->price , 2) }}</del> </small> </h6>
                             </div>
                         </div>
+                        @endforeach
 
-                        <!-- Single Product -->
-                        <div class="single-product-area">
-                            <div class="product_image">
-                                <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-2.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-2-back.png" alt="">
-
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span>New</span>
-                                </div>
-
-                                <!-- Wishlist -->
-                                <div class="product_wishlist">
-                                    <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                                </div>
-
-                                <!-- Compare -->
-                                <div class="product_compare">
-                                    <a href="compare.html"><i class="icofont-exchange"></i></a>
-                                </div>
-                            </div>
-
-                            <!-- Product Description -->
-                            <div class="product_description">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart">
-                                    <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
-                                </div>
-
-                                <!-- Quick View -->
-                                <div class="product_quick_view">
-                                    <a href="#" data-toggle="modal" data-target="#quickview"><i
-                                            class="icofont-eye-alt"></i> Quick View</a>
-                                </div>
-
-                                <p class="brand_name">Sarah</p>
-                                <a href="#">Flower Textured Dress</a>
-                                <h6 class="product-price">$24 <span>$49</span></h6>
-                            </div>
-                        </div>
-
-                        <!-- Single Product -->
-                        <div class="single-product-area">
-                            <div class="product_image">
-                                <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-4.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-4-back.png" alt="">
-
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span>New</span>
-                                </div>
-
-                                <!-- Wishlist -->
-                                <div class="product_wishlist">
-                                    <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                                </div>
-
-                                <!-- Compare -->
-                                <div class="product_compare">
-                                    <a href="compare.html"><i class="icofont-exchange"></i></a>
-                                </div>
-                            </div>
-
-                            <!-- Product Description -->
-                            <div class="product_description">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart">
-                                    <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
-                                </div>
-
-                                <!-- Quick View -->
-                                <div class="product_quick_view">
-                                    <a href="#" data-toggle="modal" data-target="#quickview"><i
-                                            class="icofont-eye-alt"></i> Quick View</a>
-                                </div>
-
-                                <p class="brand_name">Lim</p>
-                                <a href="#">Gracia Plaid Dress</a>
-                                <h6 class="product-price">$78.24</h6>
-                            </div>
-                        </div>
-
-                        <!-- Single Product -->
-                        <div class="single-product-area">
-                            <div class="product_image">
-                                <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-5.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-5-back.png" alt="">
-
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span>New</span>
-                                </div>
-
-                                <!-- Wishlist -->
-                                <div class="product_wishlist">
-                                    <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                                </div>
-
-                                <!-- Compare -->
-                                <div class="product_compare">
-                                    <a href="compare.html"><i class="icofont-exchange"></i></a>
-                                </div>
-                            </div>
-
-                            <!-- Product Description -->
-                            <div class="product_description">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart">
-                                    <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
-                                </div>
-
-                                <!-- Quick View -->
-                                <div class="product_quick_view">
-                                    <a href="#" data-toggle="modal" data-target="#quickview"><i
-                                            class="icofont-eye-alt"></i> Quick View</a>
-                                </div>
-
-                                <p class="brand_name">Lim</p>
-                                <a href="#">Gracia Plaid Dress</a>
-                                <h6 class="product-price">$34 <span>$48</span></h6>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- New Arrivals Area -->
+    @endif
 
     <!-- Featured Products Area -->
     <section class="featured_product_area">

@@ -41,6 +41,10 @@
                     <label for="">Title <span class="text-danger"> *</span></label>
                     <input type="text" class="form-control" name="title" value="{{old('title')}}" placeholder="Title">
                   </div>
+                  <div class="form-group">
+                    <label for="">URL <span class="text-danger"> *</span></label>
+                    <input type="text" class="form-control" name="slug" value="{{old('slug')}}" placeholder="url">
+                  </div>
                 </div>
 
 

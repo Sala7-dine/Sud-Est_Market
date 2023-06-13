@@ -48,19 +48,13 @@ class CategoryController extends Controller
         $this->validate($request , [
             "title" => "string|required",
             "summary" => "string|nullable", 
+            "slug" => "string|required|unique:categories,slug",
             "is_parent" => "sometimes|in:1",
             'parent_id'=>'nullable|exists:categories,id',
             "status" => "required|in:active,inactive",
         ]);
 
-        $data = $request->all();
-        $slug =Str::slug($request->input('title'));
-        $slug_count = Category::where("slug" ,$slug)->count();
-        if($slug_count>0)
-        {
-            $slug = time().'-'.$slug; 
-        }
-        $data['slug'] = $slug ; 
+        $data = $request->all(); 
         $data['is_parent']=$request->input('is_parent',0);
         $status = Category::create($data); 
         if($status)
@@ -106,6 +100,7 @@ class CategoryController extends Controller
             $this->validate($request, [
                 "title" => "string|required",
                 "summary" => "string|nullable",
+                "slug" => "string|required|exists:categories,slug",
                 "is_parent" => "sometimes|boolean",
                 'parent_id'=>'nullable|exists:categories,id',
                 "status" => "required|in:active,inactive",
