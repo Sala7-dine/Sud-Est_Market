@@ -19,14 +19,26 @@ use Illuminate\Support\Facades\Route;
 
 // Fronten ---- 
 
+// ahuthentication 
+
+Route::get('user/auth' , [\App\Http\Controllers\Frontend\IndexController::class , "userAuth"])->name("user.auth");
+
+
 Route::get("/" , [App\Http\Controllers\Frontend\IndexController::class , "home"])->name("home"); 
 
+// Product Category 
+
+Route::get("product-cat/{slug}",[App\Http\Controllers\Frontend\IndexController::class , "productCategory"])->name("product.category");
+
+//  Product Detail 
+
+Route::get("product-detail/{slug}",[App\Http\Controllers\Frontend\IndexController::class , "productDetail"])->name("product.detail");
 
 // End Frontend ------ 
 
 Auth::routes(["register"=>false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 // Admin Dashboard ------
 Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
@@ -41,7 +53,6 @@ Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
     Route::post("category_status" , [App\Http\Controllers\CategoryController::class , "categoryStatus"])->name("category.status");
 
     Route::post('category/{id}/child' ,[App\Http\Controllers\CategoryController::class , "getChildByParentId"]);
-
 
     // Brand Section 
     Route::resource("/brand" , App\Http\Controllers\BrandController::class);

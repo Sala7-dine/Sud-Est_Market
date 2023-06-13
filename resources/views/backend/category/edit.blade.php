@@ -42,6 +42,10 @@
                     <label for="">Title <span class="text-danger"> *</span></label>
                     <input type="text" class="form-control" name="title" value="{{$category->title}}" placeholder="Title">
                   </div>
+                  <div class="form-group">
+                    <label for="">url <span class="text-danger"> *</span></label>
+                    <input type="text" class="form-control" name="slug" value="{{$category->slug}}" placeholder="slug">
+                  </div>
                 </div>
 
 

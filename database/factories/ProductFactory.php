@@ -29,7 +29,7 @@ class ProductFactory extends Factory
             "vendor_id" => $this->faker->randomElement(User::pluck("id")->toArray()),
             "cat_id" => $this->faker->randomElement(Category::where("is_parent" , 1)->pluck("id")->toArray()),
             "child_cat_id" => $this->faker->randomElement(Category::where("is_parent" , 0)->pluck("id")->toArray()),
-            'photo' => $this->faker->imageUrl('400','200'),
+            'photo' => $this->faker->imageUrl('400','600'),
             "price" => $this->faker->numberBetween(100,1000),
             "offre_price" => $this->faker->numberBetween(100,1000),
             "discount" => $this->faker->numberBetween(0,100),
