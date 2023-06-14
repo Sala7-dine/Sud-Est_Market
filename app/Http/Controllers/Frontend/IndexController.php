@@ -17,15 +17,52 @@ class IndexController extends Controller
 {
     public function home(){
         $banners = Banner::where(["status" => "active" , "condition"=> "banner"])->orderBy("id" , "DESC")->limit("5")->get() ;
-        $categories  = Category::where(["status" => "active" , "is_parent"=>1])->limit(4)->orderBy("id","DESC")->get();
+        $categories  = Category::where(["status" => "active" , "is_parent"=>1])->limit(3)->orderBy("id","DESC")->get();
 
         return view("frontend.index" , compact(['banners' , 'categories'])); 
     }
 
-    public function productCategory($slug)
+    public function productCategory(Request $request , $slug)
     {
         $categories = Category::with('products')->where("slug" , $slug)->first();
-        return view("frontend.pages.product-category" , compact("categories")); 
+        $sort = "" ; 
+
+        if($request->sort !=null){
+            $sort = $request->sort; 
+        }
+
+        if($categories == null){
+            return view('errors.404');
+        } else {
+            if($sort == 'priceAsc'){
+                $products =  Product::where(["status"=>"active" , "cat_id"=>$categories->id])->orderBy("offre_price" , "ASC")->paginate(12); 
+            }
+            elseif($sort == 'priceDesc'){
+                $products =  Product::where(["status"=>"active" , "cat_id"=>$categories->id])->orderBy("offre_price" , "DESC")->paginate(12); 
+            }
+            elseif($sort == 'disceDesc'){
+                $products =  Product::where(["status"=>"active" , "cat_id"=>$categories->id])->orderBy("price" , "Asc")->paginate(12); 
+            }
+            elseif($sort == 'disceDesc'){
+                $products =  Product::where(["status"=>"active" , "cat_id"=>$categories->id])->orderBy("price" , "DESC")->paginate(12); 
+            }
+            elseif($sort == 'titleAsc'){
+                $products =  Product::where(["status"=>"active" , "cat_id"=>$categories->id])->orderBy("title" , "ASC")->paginate(12); 
+            } 
+            elseif($sort == 'titleAsc'){
+                $products =  Product::where(["status"=>"active" , "cat_id"=>$categories->id])->orderBy("title" , "DESC")->paginate(12); 
+            }else{
+                $products =  Product::where(["status"=>"active" , "cat_id"=>$categories->id])->paginate(12); 
+
+            }
+        }
+
+        $route='product-cat'; 
+        if($request->ajax()){
+            $view = view('frontend.layouts._single-product' , compact("products"))->render(); 
+            return response()->json(["html"=>$view]);
+        }
+        return view("frontend.pages.product-category" , compact(["categories" , "route" , "products"])); 
     }
 
 

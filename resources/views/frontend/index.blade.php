@@ -42,8 +42,8 @@
                             <img src="{{$cat->photo}}" alt="{{$cat->title}}">
                         </a>
                     </div>
+                    @endforeach
                 </div>
-            @endforeach
             </div>
         </div>
     </div>
