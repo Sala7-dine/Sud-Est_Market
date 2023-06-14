@@ -22,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 // ahuthentication 
 
 Route::get('user/auth' , [\App\Http\Controllers\Frontend\IndexController::class , "userAuth"])->name("user.auth");
-
+Route::post('user/login', [\App\Http\Controllers\Frontend\IndexController::class , "loginSubmit"])->name("login.submit");
+Route::post('user/register', [\App\Http\Controllers\Frontend\IndexController::class , "registerSubmit"])->name("register.submit");
+Route::get("user/logout" , [\App\Http\Controllers\Frontend\IndexController::class , "userLogout"])->name("user.logout");
 
 Route::get("/" , [App\Http\Controllers\Frontend\IndexController::class , "home"])->name("home"); 
 
@@ -41,7 +43,7 @@ Auth::routes(["register"=>false]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 // Admin Dashboard ------
-Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
+Route::group(['prefix'=>'admin' , 'middleware'=>["auth" , "admin"]] ,function(){
     Route::get("/" , [AdminController::class, 'admin'])->name("admin");
 
     // Banner Section 
@@ -65,5 +67,11 @@ Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
     // User Section 
     Route::resource("/user" , App\Http\Controllers\UserController::class);
     Route::post("user_status" , [App\Http\Controllers\UserController::class , "userStatus"])->name("user.status");
+
+});
+
+
+Route::group(['prefix'=>'seller' , 'middleware'=>["auth" , "seller"]] ,function(){
+    Route::get("/" , [AdminController::class, 'admin'])->name("seller");
 
 });
