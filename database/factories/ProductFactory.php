@@ -29,12 +29,12 @@ class ProductFactory extends Factory
             "vendor_id" => $this->faker->randomElement(User::pluck("id")->toArray()),
             "cat_id" => $this->faker->randomElement(Category::where("is_parent" , 1)->pluck("id")->toArray()),
             "child_cat_id" => $this->faker->randomElement(Category::where("is_parent" , 0)->pluck("id")->toArray()),
-            'photo' => $this->faker->imageUrl('400','200'),
+            'photo' => $this->faker->imageUrl('400','600'),
             "price" => $this->faker->numberBetween(100,1000),
             "offre_price" => $this->faker->numberBetween(100,1000),
             "discount" => $this->faker->numberBetween(0,100),
             "size" => $this->faker->randomElement(["S","M","L","XL"]),
-            "conditions" => $this->faker->randomElement(["new","popular","winter"]),
+            "conditions" => $this->faker->randomElement(["NEW","POPULAR","WINTER"]),
             "status" => $this->faker->randomElement(["active","inactive"]),
             
         ];

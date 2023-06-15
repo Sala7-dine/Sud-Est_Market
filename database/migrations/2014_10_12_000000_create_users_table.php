@@ -21,8 +21,22 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
-            $table->enum('role' , ["admin" , "vendor","customer"])->default("customer");
+            $table->enum('role' , ["admin" , "seller","customer"])->default("customer");
             $table->enum('status' , ["active" , "inactive"])->default("active");
+
+            $table->string("country")->nullable();
+            $table->string("city")->nullable();
+            $table->integer("postcode")->nullable();
+            $table->string("state")->nullable();
+
+            $table->string("scountry")->nullable();
+            $table->string("scity")->nullable();
+            $table->integer("spostcode")->nullable();
+            $table->string("sstate")->nullable();
+            $table->string("saddress")->nullable();
+
+
+
             $table->rememberToken();
             $table->timestamps();
         });

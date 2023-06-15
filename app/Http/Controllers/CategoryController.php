@@ -48,20 +48,13 @@ class CategoryController extends Controller
         $this->validate($request , [
             "title" => "string|required",
             "summary" => "string|nullable", 
+            "slug" => "string|required|unique:categories,slug",
             "is_parent" => "sometimes|in:1",
             'parent_id'=>'nullable|exists:categories,id',
-            //"photo" => "required",
-            "status" => "nullable|in:active,inactive",
+            "status" => "required|in:active,inactive",
         ]);
 
-        $data = $request->all();
-        $slug =Str::slug($request->input('title'));
-        $slug_count = Category::where("slug" ,$slug)->count();
-        if($slug_count>0)
-        {
-            $slug = time().'-'.$slug; 
-        }
-        $data['slug'] = $slug ; 
+        $data = $request->all(); 
         $data['is_parent']=$request->input('is_parent',0);
         $status = Category::create($data); 
         if($status)
@@ -107,9 +100,10 @@ class CategoryController extends Controller
             $this->validate($request, [
                 "title" => "string|required",
                 "summary" => "string|nullable",
+                "slug" => "string|required|exists:categories,slug",
                 "is_parent" => "sometimes|boolean",
                 'parent_id'=>'nullable|exists:categories,id',
-                "status" => "nullable|in:active,inactive",
+                "status" => "required|in:active,inactive",
             ]);
     
             $data = $request->all();
@@ -159,7 +153,18 @@ class CategoryController extends Controller
 
     public function getChildByParentId(Request $request , $id)
     {
-        $category =  Category::find($request->id) ; 
-        $child_id = Category::getChildByParentId($request->id);
+        $category =  Category::find($request->id) ;
+        if($category)
+        {
+            $child_id = Category::getChildByParentId($request->id); 
+            if(count($child_id)<=0)
+            {
+                return response()->json(["status"=>false , 'data'=>null , "msg"=>""]);
+            }
+            return response()->json(["status"=>true , 'data'=>$child_id , "msg"=>""]);
+
+        }else{
+            return response()->json(["status"=>false , 'data'=>null , "msg"=>"Category not found"]);
+        }
     }
 }

@@ -108,8 +108,8 @@
                             </li>
                             <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-people"></i><span>User Management</span> </a>
                                 <ul>
-                                    <li><a href="departments.html">All Departments</a></li>
-                                    <li><a href="add-departments.html">Add Departments</a></li>
+                                    <li><a href="{{route('user.index')}}">All User</a></li>
+                                    <li><a href="{{route('user.create')}}">Add User</a></li>
                                 </ul>
                             </li>
                             <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-bubbles"></i><span>Comments Management</span> </a>

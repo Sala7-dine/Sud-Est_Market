@@ -17,16 +17,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Fronten ---- 
+
+// ahuthentication 
+
+Route::get('user/auth' , [\App\Http\Controllers\Frontend\IndexController::class , "userAuth"])->name("user.auth");
+Route::post('user/login', [\App\Http\Controllers\Frontend\IndexController::class , "loginSubmit"])->name("login.submit");
+Route::post('user/register', [\App\Http\Controllers\Frontend\IndexController::class , "registerSubmit"])->name("register.submit");
+Route::get("user/logout" , [\App\Http\Controllers\Frontend\IndexController::class , "userLogout"])->name("user.logout");
+
+Route::get("/" , [App\Http\Controllers\Frontend\IndexController::class , "home"])->name("home"); 
+
+// Product Category 
+
+Route::get("product-cat/{slug}",[App\Http\Controllers\Frontend\IndexController::class , "productCategory"])->name("product.category");
+
+//  Product Detail 
+
+Route::get("product-detail/{slug}",[App\Http\Controllers\Frontend\IndexController::class , "productDetail"])->name("product.detail");
+
+// End Frontend ------ 
 
 Auth::routes(["register"=>false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 // Admin Dashboard ------
-Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
+Route::group(['prefix'=>'admin' , 'middleware'=>["auth" , "admin"]] ,function(){
     Route::get("/" , [AdminController::class, 'admin'])->name("admin");
 
     // Banner Section 
@@ -39,7 +56,6 @@ Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
 
     Route::post('category/{id}/child' ,[App\Http\Controllers\CategoryController::class , "getChildByParentId"]);
 
-
     // Brand Section 
     Route::resource("/brand" , App\Http\Controllers\BrandController::class);
     Route::post("brand_status" , [App\Http\Controllers\BrandController::class , "brandStatus"])->name("brand.status");
@@ -48,4 +64,24 @@ Route::group(['prefix'=>'admin' , 'middleware'=>"auth"] ,function(){
     Route::resource("/product" , App\Http\Controllers\ProductController::class);
     Route::post("product_status" , [App\Http\Controllers\ProductController::class , "productStatus"])->name("product.status");
 
+    // User Section 
+    Route::resource("/user" , App\Http\Controllers\UserController::class);
+    Route::post("user_status" , [App\Http\Controllers\UserController::class , "userStatus"])->name("user.status");
+
+});
+
+
+Route::group(['prefix'=>'seller' , 'middleware'=>["auth" , "seller"]] ,function(){
+    Route::get("/" , [AdminController::class, 'admin'])->name("seller");
+
+});
+
+
+// User Dashboard 
+
+Route::group(["prefix"=>"user"] , function(){
+    Route::get("/dashboard" , [\App\Http\Controllers\Frontend\IndexController::class , "userDashboard"])->name("user.dashboard");
+    Route::get("/order" , [\App\Http\Controllers\Frontend\IndexController::class , "userOrder"])->name("user.order");
+    Route::get("/address" , [\App\Http\Controllers\Frontend\IndexController::class , "userAddress"])->name("user.address");
+    Route::get("/account-detail" , [\App\Http\Controllers\Frontend\IndexController::class , "userAccount"])->name("user.account");
 });
