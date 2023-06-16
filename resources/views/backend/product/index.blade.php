@@ -85,12 +85,10 @@
                                             </form>
                                         </td>
 
-
-
                                         <div class="modal fade" id="productID{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 @php
-                                                $product = \App\Models\Product::where("id" , $item->id)->first();
+                                                $product=\App\Models\Product::where("id" , $item->id)->first();
                                                 @endphp
                                                 <div class="modal-content">
                                                     <div class="modal-header">

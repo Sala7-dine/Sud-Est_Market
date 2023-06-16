@@ -4,7 +4,7 @@
                 <img src="{{asset('backend/assets/images/lg/avatar2.jpg')}}" class="rounded-circle user-photo" alt="User Profile Picture">
                 <div class="dropdown"> 
                     <span>Welcome,</span>
-                    <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Pro. William</strong></a>
+                    <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{$user->full_name}}</strong></a>
                     <ul class="dropdown-menu dropdown-menu-right account">
                         <li><a href="professors-profile.html"><i class="icon-user"></i>My Profile</a></li>
                         <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>

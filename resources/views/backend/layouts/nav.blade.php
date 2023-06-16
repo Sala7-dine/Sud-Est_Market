@@ -5,7 +5,7 @@
             </div>
 
             <div class="navbar-brand">
-                <a href="index.html"><img src="{{asset('backend/assets/images/logo.svg')}}" alt="Lucid Logo" class="img-responsive logo"></a>                
+                <a href="index.html"><img src="{{asset('frontend/img/core-img/logo3.png')}}" alt="SUD-EST Logo" class="img-responsive logo"></a>                
             </div>
             
             <div class="navbar-right">
