@@ -107,12 +107,13 @@
                                     <div class="share_wf mt-30">
                                         <p>Share with friends</p>
                                         <div class="_icon">
-                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                            <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="icofont-facebook"></i></a>
+                                            <a href="#"><i class="icofont-twitter"></i></a>
+                                            <a href="#"><i class="icofont-pinterest"></i></a>
+                                            <a href="#"><i class="icofont-linkedin"></i></a>
+                                            <a href="#"><i class="icofont-instagram"></i></a>
+                                            <a href="#"><i class="icofont-email"></i></a>
+                                            <a href="#"><i class="bi bi-email"></i></a>
                                         </div>
                                     </div>
                                 </div>
