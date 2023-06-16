@@ -16,5 +16,12 @@
 <script src="{{asset('frontend/assets/js/wow.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/active.js')}}"></script>
 
+<script>
+  setTimeout(function(){
+    $('#alert').slideUp();
+  } , 20000);
+</script>
+
 
 @yield("scripts")
+
