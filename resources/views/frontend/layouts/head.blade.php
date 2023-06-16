@@ -25,4 +25,69 @@
 <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
 
 
+<style>
+<<<<<<< Updated upstream
+.auth-body  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+}
+.main {
+  width: 400px;
+  height: 460px;
+  padding: 0;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#chk {
+  display: none;
+}
+.signup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+label {
+  color: #fff;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+button {
+  height: 40px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+.login {
+  height: 460px;
+  margin-top: -40px;
+  background: #eee;
+  border-radius: 60% / 10%;
+  transform: translateY(-40px);
+  transition: 0.5s ease-in-out;
+}
+.login label {
+  color: #573b8a;
+  transform: scale(0.8);
+}
+
+#chk:checked ~ .login {
+  transform: translateY(-380px);
+}
+#chk:checked ~ .login label {
+  transform: scale(1);
+}
+#chk:checked ~ .signup label {
+  transform: scale(0.8);
+}
+</style>
+
+
 @yield("styles")

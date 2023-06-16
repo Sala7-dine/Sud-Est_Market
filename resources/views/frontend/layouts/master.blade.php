@@ -30,7 +30,7 @@
     @yield('content')
 
     <!-- Footer Area -->
-  @include('frontend.layouts.footer')
+   @include('frontend.layouts.footer')
     <!-- Footer Area -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
