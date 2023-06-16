@@ -1,17 +1,18 @@
 <header class="header_area">
     <!-- Top Header Area -->
-    <div class="top-header-area">
-        <div class="container h-100">
+    <!-- <div class="top-header-area">
+        <div class="container h-75">
             <div class="row h-100 align-items-center">
-                <div class="col-6">
+             <div class="col-12 text-center">
                     <div class="welcome-note">
                         <span class="popover--text" data-toggle="popover" data-content="Welcome to Sud-Est Market Shopping Online."><i class="icofont-info-square"></i></span>
-                        <span class="text ">Welcome to Sud-Est Market Shopping Online.</span>
+                        <span class="text">Welcome to Sud-Est Market Shopping Online.</span>
                     </div>
-                </div>
-                <div class="col-6">
+                </div> 
+
+                 <div class="col-6">
                     <div class="language-currency-dropdown d-flex align-items-center justify-content-end">
-                        <!-- Language Dropdown -->
+                         Language Dropdown 
                         <div class="language-dropdown">
                             <div class="dropdown">
                                 <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,7 +25,7 @@
                             </div>
                         </div>
 
-                        <!-- Currency Dropdown -->
+                         Currency Dropdown 
                         <div class="currency-dropdown">
                             <div class="dropdown">
                                 <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,7 +41,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Main Menu -->
     <div class="bigshop-main-menu">
@@ -99,15 +100,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="#">Blog</a>
-                                    <ul class="dropdown">
-                                        <li><a href="blog-with-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-with-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="blog-with-no-sidebar.html">Blog No Sidebar</a></li>
-                                        <li><a href="single-blog.html">Single Blog</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Elements</a>
+                                <li><a href="#">Categories</a>
                                     <div class="megamenu">
                                         <ul class="single-mega cn-col-4">
                                             <li><a href="accordian.html">- Accordions</a></li>

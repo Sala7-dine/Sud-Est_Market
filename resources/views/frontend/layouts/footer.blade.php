@@ -1,4 +1,4 @@
-<footer class="footer_area section_padding_100_0">
+<footer class="footer_area section_padding_100_0" style="padding: 35px 0 0 0 ;">
         <div class="container">
             <div class="row">
                 <!-- Single Footer Area -->
@@ -8,18 +8,16 @@
                             <h6>Contact Us</h6>
                         </div>
                         <ul class="footer_content">
-                            <li><span>Address:</span> Lords, London, UK - 1259</li>
-                            <li><span>Phone:</span> 002 63695 24624</li>
-                            <li><span>FAX:</span> 002 78965 369552</li>
+                            <li><span>Address:</span> Morocco, Tinghir, - 45800 </li>
+                            <li><span>Phone:</span> +212 653-2853</li>
+                            <li><span>FAX:</span> +212 568-352-652</li>
                             <li><span>Email:</span> support@example.com</li>
                         </ul>
                         <div class="footer_social_area mt-15">
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+                            <a href="#"><i class="icofont-facebook"></i></a>
+                            <a href="#"><i class="icofont-twitter"></i></a>
+                            <a href="#"><i class="icofont-linkedin"></i></a>
+                            <a href="#"><i class="icofont-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -89,41 +87,23 @@
                             </form>
                         </div>
                     </div>
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Download our Mobile Apps</h6>
-                        </div>
-                        <div class="apps_download">
-                            <a href="#"><img src="frontend/img/core-img/play-store.png" alt="Play Store"></a>
-                            <a href="#"><img src="frontend/img/core-img/app-store.png" alt="Apple Store"></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Footer Bottom -->
-        <div class="footer_bottom_area">
-            <div class="container">
+        <div class="footer_bottom_area" style="padding: 17px 0 0 0 ;">
+            <div class="container text-center">
                 <div class="row align-items-center">
                     <!-- Copywrite -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-12">
                         <div class="copywrite_text">
-                            <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#">Designing
-                                    World</a></p>
-                        </div>
-                    </div>
-                    <!-- Payment Method -->
-                    <div class="col-12 col-md-6">
-                        <div class="payment_method">
-                            <img src="frontend/img/payment-method/paypal.png" alt="">
-                            <img src="frontend/img/payment-method/maestro.png" alt="">
-                            <img src="frontend/img/payment-method/western-union.png" alt="">
-                            <img src="frontend/img/payment-method/discover.png" alt="">
-                            <img src="frontend/img/payment-method/american-express.png" alt="">
+                            <p>Made with <i class="icofont-copyright"></i> by <a href="#">Salahdine & Abdelghani</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+

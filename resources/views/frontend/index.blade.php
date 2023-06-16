@@ -6,17 +6,16 @@
     <!-- Welcome Slides Area -->
     <section class="welcome_area">
         <div class="welcome_slides owl-carousel">
-        
           @foreach($banners as $banner)
             <!-- Single Slide -->
             <div class="single_slide bg-img" style="background-image: url({{$banner->photo}});">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-5">
                             <div class="welcome_slide_text">
                                 <h2 class="text-white" data-animation="fadeInUp" data-delay="300ms">{{$banner->title}}</h2>
                                 <h4 class="text-white" data-animation="fadeInUp" data-delay="600ms">{!! html_entity_decode($banner->description) !!}</h4>
-                                <a href="#" class="btn btn-primary" data-animation="fadeInUp" data-delay="900ms">Shop Now</a>
+                                <a href="#" class="btn btn-primary mt-4" data-animation="fadeInUp" data-delay="900ms">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -33,13 +32,24 @@
     <!-- Top Catagory Area -->
     <div class="top_catagory_area mt-50 clearfix">
         <div class="container">
+        <div class="row">
+                <div class="col-12">
+                    <div class="section_heading new_arrivals">
+                        <h5>Categories</h5>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
             @foreach($categories as $cat)
                 <!-- Single Catagory -->
                 <div class="col-12 col-md-4">
                     <div class="single_catagory_area mt-50"></div>
-                      <a href="{{route('product.category', $cat->slug)}}">
+                      <a href="{{route('product.category', $cat->slug)}}" class="text-center">
                             <img src="{{$cat->photo}}" alt="{{$cat->title}}">
+                            
+                            <h4 class="mt-4"> <i class="icofont-caret-right" ></i> {{$cat->title}} </h4> 
+                        
                         </a>
                     </div>
                     @endforeach
@@ -74,11 +84,11 @@
                                     <div class="quickview_pro_des">
                                         <h4 class="title">Boutique Silk Dress</h4>
                                         <div class="top_seller_product_rating mb-15">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
                                         </div>
                                         <h5 class="price">$120.99 <span>$130</span></h5>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia expedita
@@ -127,7 +137,7 @@
 
 
     @php 
-    $new_product = \App\Models\Product::where(["status"=>"active" ,"conditions"=>"NEW"])->orderBy("id" , "DESC")->limit(10)->get();
+    $new_product = \App\Models\Product::where(["status"=>"active"])->orderBy("id" , "DESC")->limit(20)->get();
     @endphp
 
     @if(count($new_product)>0)
@@ -203,13 +213,13 @@
     @endif
 
     <!-- Featured Products Area -->
-    <section class="featured_product_area">
-        <div class="container">
+    <section class="featured_product_area" style="margin-top: -250px;">
+        <div class="container ">
             <div class="row">
                 <!-- Featured Offer Area -->
                 <div class="col-12 col-lg-6">
                     <div class="featured_offer_area d-flex align-items-center"
-                        style="background-image: url(img/bg-img/fea_offer.jpg);">
+                        style="background-image: url(frontend/img/bg-img/fea_offer.jpg);">
                         <div class="featured_offer_text">
                             <p>Summer 2018</p>
                             <h2>30% OFF</h2>
@@ -231,8 +241,8 @@
                         <div class="single-product-area">
                             <div class="product_image">
                                 <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-2.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-2-back.png" alt="">
+                                <img class="normal_img" src="frontend/img/product-img/pd-big-thumb-3.png" alt="">
+                                <img class="hover_img" src="frontend/img/product-img/pd-big-thumb-3.png" alt="">
 
                                 <!-- Product Badge -->
                                 <div class="product_badge">
@@ -266,11 +276,11 @@
                                 <a href="#">Flower Textured Dress</a>
                                 <h6 class="product-price">$17 <span>$26</span></h6>
                                 <div class="product_rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -279,8 +289,8 @@
                         <div class="single-product-area">
                             <div class="product_image">
                                 <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-4.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-4-back.png" alt="">
+                                <img class="normal_img" src="frontend/img/product-img/pd-big-thumb-1.png" alt="">
+                                <img class="hover_img" src="frontend/img/product-img/pd-big-thumb-4.png" alt="">
 
                                 <!-- Product Badge -->
                                 <div class="product_badge">
@@ -314,62 +324,15 @@
                                 <a href="#">Box Shape Dress</a>
                                 <h6 class="product-price">$21.25</h6>
                                 <div class="product_rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
+                                    <i class="icofont-star" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Single Product -->
-                        <div class="single-product-area">
-                            <div class="product_image">
-                                <!-- Product Image -->
-                                <img class="normal_img" src="frontend/img/product-img/new-7.png" alt="">
-                                <img class="hover_img" src="frontend/img/product-img/new-7-back.png" alt="">
-
-                                <!-- Product Badge -->
-                                <div class="product_badge">
-                                    <span>Sale</span>
-                                </div>
-
-                                <!-- Wishlist -->
-                                <div class="product_wishlist">
-                                    <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                                </div>
-
-                                <!-- Compare -->
-                                <div class="product_compare">
-                                    <a href="compare.html"><i class="icofont-exchange"></i></a>
-                                </div>
-                            </div>
-
-                            <!-- Product Description -->
-                            <div class="product_description">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart">
-                                    <a href="#"><i class="icofont-shopping-cart"></i> Add to Cart</a>
-                                </div>
-
-                                <!-- Quick View -->
-                                <div class="product_quick_view">
-                                    <a href="#" data-toggle="modal" data-target="#quickview"><i
-                                            class="icofont-eye-alt"></i> Quick View</a>
-                                </div>
-
-                                <a href="#">Black Dress</a>
-                                <h6 class="product-price">$41 <span>$44</span></h6>
-                                <div class="product_rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -378,7 +341,7 @@
     <!-- Featured Products Area -->
 
     <!-- Best Rated/Onsale/Top Sale Product Area -->
-    <section class="best_rated_onsale_top_sellares section_padding_100_70">
+    <section class="best_rated_onsale_top_sellares section_padding_100_70" >
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -386,13 +349,13 @@
                         <!-- Tabs -->
                         <ul class="nav nav-tabs" role="tablist" id="product-tab">
                             <li class="nav-item">
-                                <a href="#top-sellers" class="nav-link" data-toggle="tab" role="tab">Top Sellers</a>
+                                <a href="#top-sellers" class="nav-link active" data-toggle="tab" role="tab">Top Sellers</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#best-rated" class="nav-link" data-toggle="tab" role="tab">Best Rated</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#on-sale" class="nav-link active" data-toggle="tab" role="tab">On Sale</a>
+                                <a href="#on-sale" class="nav-link " data-toggle="tab" role="tab">On Sale</a>
                             </li>
                         </ul>
 
@@ -409,11 +372,11 @@
                                                     <h5>KID’s Fashion</h5>
                                                     <h6>$49.39 <span>$55.31</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -459,11 +422,12 @@
                                                     <h5>Beach Cap</h5>
                                                     <h6>$20 <span>$25</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+
                                                     </div>
 
                                                     <!-- Info -->
@@ -509,11 +473,11 @@
                                                     <h5>Gold Neckless</h5>
                                                     <h6>$69 <span>$71</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -559,11 +523,11 @@
                                                     <h5>Diamond Neckless</h5>
                                                     <h6>$300 <span>$310</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -609,11 +573,11 @@
                                                     <h5>Sport Shoes</h5>
                                                     <h6>$30 <span>$34</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -659,11 +623,11 @@
                                                     <h5>Pin Up Bikini</h5>
                                                     <h6>$27 <span>$29</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -715,11 +679,11 @@
                                                     <h5>Sports Bra</h5>
                                                     <h6>$60 <span>$63</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -765,11 +729,11 @@
                                                     <h5>Trendy Glasses</h5>
                                                     <h6>$30 <span>$32</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -815,11 +779,11 @@
                                                     <h5>Women Watch</h5>
                                                     <h6>$79 <span>$85</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -865,11 +829,11 @@
                                                     <h5>Headphone</h5>
                                                     <h6>$18 <span>$21</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -915,11 +879,11 @@
                                                     <h5>Plus Bra</h5>
                                                     <h6>$51 <span>$58</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -965,11 +929,11 @@
                                                     <h5>Laptop</h5>
                                                     <h6>$130 <span>$160</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -1021,11 +985,11 @@
                                                     <h5>Speaker</h5>
                                                     <h6>$60 <span>$70</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -1071,11 +1035,11 @@
                                                     <h5>Fancy Lamp</h5>
                                                     <h6>$34 <span>$40</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -1121,11 +1085,11 @@
                                                     <h5>Sport Bra</h5>
                                                     <h6>$63 <span>$70</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -1171,11 +1135,11 @@
                                                     <h5>S'well Water</h5>
                                                     <h6>$12 <span>$13</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -1221,11 +1185,11 @@
                                                     <h5>Slipper</h5>
                                                     <h6>$24 <span>$36</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->
@@ -1271,11 +1235,11 @@
                                                     <h5>T-shirt</h5>
                                                     <h6>$96 <span>$120</span></h6>
                                                     <div class="top_seller_product_rating">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
+                                                        <i class="icofont-star" aria-hidden="true"></i>
                                                     </div>
 
                                                     <!-- Info -->

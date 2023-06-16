@@ -37,6 +37,10 @@ Route::get("product-cat/{slug}",[App\Http\Controllers\Frontend\IndexController::
 
 Route::get("product-detail/{slug}",[App\Http\Controllers\Frontend\IndexController::class , "productDetail"])->name("product.detail");
 
+// Cart Section ------
+
+Route::post("cart/store" , [App\Http\Controllers\Frontend\CartController::class , "cartStore"])->name("cart.store");
+
 // End Frontend ------ 
 
 Auth::routes(["register"=>false]);

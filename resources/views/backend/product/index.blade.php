@@ -74,14 +74,14 @@
                                         <td>
                                             <input type="checkbox" data-toggle="switchbutton" name="toggle" value="{{$item->id}}" {{$item->status=="active" ? "checked" : '' }} data-onlabel="active" data-offlabel="inactive" data-size="sm" data-onstyle="success" data-offstyle="danger">
                                         </td>
-                                        <td>
-                                            <a href="javascript:void(0);" title="view" data-placement="bottom" class="float-left btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#productID{{$item->id}}"> <i class="fas fa-eye"></i> </a>
-                                            <a href="{{route('product.edit' , $item->id )}}" data-toggle="tootltip" title="edit" data-placement="bottom" class="float-left btn btn-sm btn-outline-warning"> <i class="fas fa-edit"></i> </a>
+                                        <td class="d-flex align-items-center justify-centent-center flex-center">
+                                            <a href="javascript:void(0);" title="view" data-placement="bottom" class="btn btn-sm btn-outline-secondary mt-4" data-toggle="modal" data-target="#productID{{$item->id}}"> <i class="fas fa-eye"></i> </a>
+                                            <a href="{{route('product.edit' , $item->id )}}" data-toggle="tootltip" title="edit" data-placement="bottom" class="btn btn-sm btn-outline-warning mt-4" > <i class="fas fa-edit"></i> </a>
 
-                                            <form class="float-left" action="{{route('product.destroy' , $item->id)}}" method="post">
+                                            <form action="{{route('product.destroy' , $item->id)}}" method="post">
                                                 @csrf
                                                 @method("delete")
-                                                <a href="" data-toggle="tootltip" title="delete" data-id="{{$item->id}}" data-placement="bottom" class="dltBtn btn btn-sm btn-outline-danger"> <i class="fas fa-trash-alt"></i> </a>
+                                                <a href="" data-toggle="tootltip" title="delete" data-id="{{$item->id}}" data-placement="bottom" class="dltBtn btn btn-sm btn-outline-danger mt-4"> <i class="fas fa-trash-alt"></i> </a>
                                             </form>
                                         </td>
 
