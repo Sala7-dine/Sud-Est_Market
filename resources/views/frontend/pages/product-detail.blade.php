@@ -27,11 +27,11 @@
                                     <div class="quickview_pro_des">
                                         <h4 class="title">Boutique Silk Dress</h4>
                                         <div class="top_seller_product_rating mb-15">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
+                                            <i class="icofont-star" aria-hidden="true"></i>
                                         </div>
                                         <h5 class="price">$120.99 <span>$130</span></h5>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia expedita quibusdam aspernatur, sapiente consectetur accusantium perspiciatis praesentium eligendi, in fugiat?</p>
@@ -135,11 +135,11 @@
                     <div class="single_product_desc">
                         <h4 class="title mb-2">{{$product->title}}</h4>
                         <div class="single_product_ratings mb-2">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="icofont-star" aria-hidden="true"></i>
+                            <i class="icofont-star" aria-hidden="true"></i>
+                            <i class="icofont-star" aria-hidden="true"></i>
+                            <i class="icofont-star" aria-hidden="true"></i>
+                            <i class="icofont-star" aria-hidden="true"></i>
                             <span class="text-muted">(8 Reviews)</span>
                         </div>
                         <h4 class="price mb-4">${{number_format($product->offre_price)}} <span>${{number_format($product->price)}}</span></h4>
@@ -257,11 +257,11 @@
                                         <li>
                                             <div class="single_user_review mb-15">
                                                 <div class="review-rating">
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     <span>for Quality</span>
                                                 </div>
                                                 <div class="review-details">
@@ -270,11 +270,11 @@
                                             </div>
                                             <div class="single_user_review mb-15">
                                                 <div class="review-rating">
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     <span>for Design</span>
                                                 </div>
                                                 <div class="review-details">
@@ -283,11 +283,11 @@
                                             </div>
                                             <div class="single_user_review">
                                                 <div class="review-rating">
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
+                                                    <i class="icofont-star" aria-hidden="true"></i>
                                                     <span>for Value</span>
                                                 </div>
                                                 <div class="review-details">

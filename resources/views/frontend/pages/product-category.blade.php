@@ -75,7 +75,7 @@
     <!-- Quick View Modal Area -->
 
     <!-- Breadcumb Area -->
-    <div class="breadcumb_area">
+    <div class="breadcumb_area" style="margin-top:-20px;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -90,7 +90,7 @@
     </div>
     <!-- Breadcumb Area -->
 
-    <section class="shop_grid_area section_padding_100">
+    <section class="shop_grid_area section_padding_100" style="margin-top:-100px;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -174,6 +174,39 @@
         }
     })
 
+</script>
+
+
+<script>
+
+    $(document).on("click" , ".add_to_cart" , function(e){
+        e.preventDefault();
+        var product_id = $(this).data("product-id");
+        var product_qty = $(this).data("quantity");
+        
+        
+        var token = "{{csrf_token()}}";
+        var path = "{{route('cart.store')}}" ; 
+        $.ajax({
+            url : path , 
+            type : "POST" ,
+            dataType : "JSON", 
+            data : {
+                product_id : product_id ,  
+                product_qty : product_qty ,  
+                _token : token 
+            },
+            beforeSend  : function(){
+                $("#add_to_cart"+product_id).html('<i class="icofont-spinner-alt-1"></i> Loading ...')
+            },
+            complete : function(){
+                $("#add_to_cart"+product_id).html('<i class="icofont-shopping-cart"></i> Add to Cart')
+            },
+            success : function(data){
+                console.log(data)
+            }
+        });
+    });
 </script>
 
 @endsection
