@@ -2,22 +2,6 @@
     
 @section("content")
 
-    <!-- Breadcumb Area -->
-    <div class="breadcumb_area h-25">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Login &amp; Register</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcumb Area -->
-
-    
     <div class="bigshop_reg_log_area">
         <div class="container auth-body">
             {{-- <div class="row">
