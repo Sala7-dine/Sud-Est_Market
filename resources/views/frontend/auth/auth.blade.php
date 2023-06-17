@@ -184,7 +184,10 @@
 
 <!-- @extends("frontend.layouts.master")
 
+
+
 @section("content")
+
 
     
     <div class="breadcumb_area">
