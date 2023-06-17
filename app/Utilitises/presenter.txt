@@ -1,0 +1,79 @@
+Bonjour cher professeur,
+je m'appelle salahdine daha 
+
+Nous sommes ravis de vous présenter aujourd'hui nos projets d'application qui visent à faciliter
+la connexion entre les commerçants locaux et leurs clients. Cette application constitue une 
+solution innovante pour répondre aux défis auxquels sont confrontés les commerçants dans un 
+monde en constante évolution. 
+
+Avant de commencer, je tiens à exprimer ma sincère gratitude envers vous, cher professeur, 
+pour votre précieux soutien tout au long de notre parcours de développement.
+
+
+Au début de la vidéo, je vous présenterai les technologies clés de notre application :
+Laravel est un puissant framework de développement PHP qui offre une 
+structure solide et élégante pour la création d'applications web. Grâce à Laravel, nous pouvons 
+développer rapidement des fonctionnalités avancées et des interactions fluides. Il facilite 
+également la gestion des bases de données, la création d'API et l'authentification des utilisateurs.
+
+
+Ajax est une technique de développement web qui permet d'effectuer des requêtes asynchrones entre 
+le navigateur et le serveur, sans recharger la page entière. Cela signifie que les utilisateurs 
+peuvent interagir avec notre application de manière fluide et sans interruption.
+
+En ce qui concerne le template Blade, il s'agit d'un moteur de templating intégré à Laravel. 
+Il offre une syntaxe concise et expressive pour la création de vues. Avec Blade
+
+Nous avons utilisé aussi bootstrap et jquery mysql pour la base de donné
+
+
+--------------------------------------------------------------
+
+Un élément clé de notre application est le dashboard de l'administrateur. Ce tableau de bord 
+intuitif et convivial offre aux administrateurs un contrôle complet sur les différentes 
+fonctionnalités de l'application.
+
+Dans le tableau de bord de notre application, nous avons intégré plusieurs composants clés qui 
+fournissent des informations essentielles pour la gestion efficace des commerçants locaux. 
+
+"Products Sold" : Ce composant affiche le nombre total de produits vendus sur une période donnée. 
+Il permet aux commerçants de suivre les performances de leurs produits.
+
+"New Customers" : fournit des statistiques sur le nombre de nouveaux clients qui se 
+sont inscrits sur la plateforme.
+
+"Net Profit" : affiche le bénéfice net généré par les ventes après avoir soustrait 
+les coûts et les dépenses.
+
+"Customer Satisfaction" : mesure la satisfaction globale des clients en collectant 
+des avis et des évaluations.
+
+"Income Analysis" : fournit une analyse détaillée des sources de revenus, 
+en montrant les catégories de produits les plus rentables, les canaux de vente les plus 
+performants, etc.
+
+"Annual Report" :  offre un aperçu complet des performances annuelles, 
+y compris les ventes totales, les tendances de croissance, les bénéfices, etc. 
+
+Ces composants sont en cours de développement et seront intégrés dans notre application pour 
+offrir une expérience complète aux utilisateurs.
+
+
+----------------------------
+
+comme vous voyez ici sur le sidebar les différentes fonctionnalités de l'application.
+
+Le tableau de bord de l'administrateur permet de gérer les bannières, qui sont des images 
+promotionnelles affichées sur la page d'accueil de l'application. Les administrateurs peuvent 
+facilement modifier et mettre à jour les bannières pour refléter les offres spéciales, 
+les événements à venir ou les nouvelles collections.
+
+Je vous laisse avec les détails de notre application afin de ne pas prolonger cette vidéo
+
+
+
+
+
+
+
+

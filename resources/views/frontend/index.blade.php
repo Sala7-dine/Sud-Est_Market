@@ -673,7 +673,7 @@
                                         <div class="col-12 col-sm-6 col-lg-4">
                                             <div class="single_top_sellers">
                                                 <div class="top_seller_image">
-                                                    <img src="frontend/img/product-img/best-1.png" alt="Top-Sellers">
+                                                    <img src="frontend/img/product-img/top-2.png" alt="Top-Sellers">
                                                 </div>
                                                 <div class="top_seller_desc">
                                                     <h5>Sports Bra</h5>
@@ -1079,7 +1079,7 @@
                                         <div class="col-12 col-sm-6 col-lg-4">
                                             <div class="single_top_sellers">
                                                 <div class="top_seller_image">
-                                                    <img src="frontend/img/product-img/onsale-3.png" alt="Top-Sellers">
+                                                    <img src="frontend/img/product-img/top-2.png" alt="Top-Sellers">
                                                 </div>
                                                 <div class="top_seller_desc">
                                                     <h5>Sport Bra</h5>
