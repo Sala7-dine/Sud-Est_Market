@@ -26,14 +26,14 @@
 
 
 <style>
-<<<<<<< Updated upstream
+
 .auth-body  {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Jost", sans-serif;
 }
-.main {
+.auth-body .main {
   width: 400px;
   height: 460px;
   padding: 0;
@@ -44,12 +44,12 @@
 #chk {
   display: none;
 }
-.signup {
+.auth-body .signup {
   position: relative;
   width: 100%;
   height: 100%;
 }
-label {
+.auth-body label {
   color: #fff;
   font-size: 2.3em;
   justify-content: center;
@@ -60,20 +60,20 @@ label {
   transition: 0.5s ease-in-out;
 }
 
-button {
+.auth-body button {
   height: 40px;
   transition: 0.2s ease-in;
   cursor: pointer;
 }
-.login {
+.auth-body .login {
   height: 460px;
   margin-top: -40px;
   background: #eee;
   border-radius: 60% / 10%;
-  transform: translateY(-40px);
+  transform: translateY(-50px);
   transition: 0.5s ease-in-out;
 }
-.login label {
+.auth-body .login label {
   color: #573b8a;
   transform: scale(0.8);
 }

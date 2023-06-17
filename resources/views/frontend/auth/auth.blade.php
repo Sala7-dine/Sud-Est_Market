@@ -1,7 +1,7 @@
 @extends("frontend.layouts.master")
     
 @section("content")
-
+    
     <div class="bigshop_reg_log_area">
         <div class="container auth-body">
             {{-- <div class="row">

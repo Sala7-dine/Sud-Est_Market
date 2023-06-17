@@ -37,7 +37,7 @@
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <div class="form-group">
-                                        <p for="firstName">First Name *</p>
+                                        <label for="firstName">First Name *</label>
                                         <input type="text" class="form-control" name="full_name" id="firstName" value="{{$user->full_name}}" placeholder="salahdine ">
                                         @error("full_name")
                                             <p class="text-danger">{{$message}}</p>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <p for="displayName">Display Name</p>
+                                        <label for="displayName">Display Name</label>
                                         <input type="text" class="form-control" name="username" id="displayName" value="{{$user->username}}" placeholder="salahdh">
                                         @error("username")
                                             <p class="text-danger">{{$message}}</p>
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <p for="displayName">Phone Number</p>
+                                        <label for="displayName">Phone Number</label>
                                         <input type="text" class="form-control" id="displayName" name="phone" value="{{$user->phone}}" placeholder="+212 20202020">
                                         @error("phone")
                                             <p class="text-danger">{{$message}}</p>
@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <p for="emailAddress">Email Address *</p>
+                                        <label for="emailAddress">Email Address *</label>
                                         <input type="email" class="form-control" id="emailAddress" name="email" value="{{$user->email}}"  placeholder="salahdine@gmail.com" disabled>
                                         @error("email")
                                             <p class="text-danger">{{$message}}</p>
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <p for="currentPass">Current Password (Leave blank to leave unchanged)</p>
+                                        <label for="currentPass">Current Password (Leave blank to leave unchanged)</label>
                                         <input type="password" class="form-control" id="currentPass" name="oldpassword">
                                         @error("oldpassword")
                                             <p class="text-danger">{{$message}}</p>
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <p for="newPass">New Password (Leave blank to leave unchanged)</p>
+                                        <label for="newPass">New Password (Leave blank to leave unchanged)</label>
                                         <input type="password" class="form-control" id="newPass" name="newpassword">
                                         @error("newpassword")
                                             <p class="text-danger">{{$message}}</p>
